@@ -1,0 +1,9 @@
+tasks:
+  - init: chmod 750 $GITPOD_REPO_ROOT/fresh.sh
+    command: ./fresh.sh
+image:
+  file: .gitpod.Dockerfile
+
+vscode:
+  extensions:
+    - efoerster.texlab@1.10.0:/Vq+k9Ug/81LYWajjTgMpA==
