@@ -1,8 +1,13 @@
-tasks:
-  - init: chmod 750 $GITPOD_REPO_ROOT/fresh.sh
-    command: ./fresh.sh
 image:
   file: .gitpod.Dockerfile
+
+tasks:
+  - name: LaTeX auto-rebuild
+    command: >
+      while find . -name '*.tex' | xargs inotifywait -qqre modify .; do \
+        latexmk -pdf ; \
+      done
+  - name: Terminal
 
 vscode:
   extensions:
